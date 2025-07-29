@@ -76,7 +76,12 @@ export class ContentfulService {
    */
   static async getPage(slug: string): Promise<PageData> {
     try {
-      // Validate environment variables first
+      // Check if API is available and environment is valid
+      if (!contentfulApi) {
+        console.log('Contentful API not available, using default data');
+        return this.getDefaultPageData(slug);
+      }
+
       const envValidation = validateEnvironment();
       if (!envValidation.isValid) {
         console.warn('Missing environment variables:', envValidation.missing);
@@ -84,9 +89,13 @@ export class ContentfulService {
         return this.getDefaultPageData(slug);
       }
 
-      // Only make API call if we have valid credentials
+      // Make API call only if we have valid credentials and API instance
+      if (!contentfulApi) {
+        throw new Error('Contentful API not available');
+      }
+      
       const response = await retryWithBackoff(() =>
-        contentfulApi.post<PageResponse>('', {
+        contentfulApi!.post<PageResponse>('', {
           query: PAGE_QUERY,
           variables: { slug },
         })
@@ -120,6 +129,12 @@ export class ContentfulService {
    */
   static async getAllPages() {
     try {
+      // Check if API is available
+      if (!contentfulApi) {
+        console.log('Contentful API not available, returning empty array');
+        return [];
+      }
+
       const envValidation = validateEnvironment();
       if (!envValidation.isValid) {
         console.warn('Missing environment variables:', envValidation.missing);
@@ -127,8 +142,12 @@ export class ContentfulService {
         return [];
       }
 
+      if (!contentfulApi) {
+        throw new Error('Contentful API not available');
+      }
+      
       const response = await retryWithBackoff(() =>
-        contentfulApi.post<AllPagesResponse>('', {
+        contentfulApi!.post<AllPagesResponse>('', {
           query: ALL_PAGES_QUERY,
         })
       );
@@ -146,6 +165,12 @@ export class ContentfulService {
    */
   static async getComponent(id: string) {
     try {
+      // Check if API is available
+      if (!contentfulApi) {
+        console.log('Contentful API not available, component not available');
+        return null;
+      }
+
       const envValidation = validateEnvironment();
       if (!envValidation.isValid) {
         console.warn('Missing environment variables:', envValidation.missing);
@@ -153,8 +178,12 @@ export class ContentfulService {
         return null;
       }
 
+      if (!contentfulApi) {
+        throw new Error('Contentful API not available');
+      }
+      
       const response = await retryWithBackoff(() =>
-        contentfulApi.post<ComponentResponse>('', {
+        contentfulApi!.post<ComponentResponse>('', {
           query: COMPONENT_QUERY,
           variables: { id },
         })
@@ -179,6 +208,12 @@ export class ContentfulService {
    */
   static async getAssets(limit: number = 10) {
     try {
+      // Check if API is available
+      if (!contentfulApi) {
+        console.log('Contentful API not available, returning empty assets array');
+        return [];
+      }
+
       const envValidation = validateEnvironment();
       if (!envValidation.isValid) {
         console.warn('Missing environment variables:', envValidation.missing);
@@ -187,7 +222,7 @@ export class ContentfulService {
       }
 
       const response = await retryWithBackoff(() =>
-        contentfulApi.post<AssetsResponse>('', {
+        contentfulApi!.post<AssetsResponse>('', {
           query: ASSETS_QUERY,
           variables: { limit },
         })

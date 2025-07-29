@@ -23,35 +23,52 @@ A powerful fullstack Contentful App that enables editors to visually arrange com
 - **Deployment**: Vercel
 - **Version Control**: GitHub
 
-## Installation
+## Quick Start
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd eshkon
-   ```
+### 1. Clone and Install
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+```bash
+git clone <repository-url>
+cd eshkon
+npm install
+```
 
-3. **Set up environment variables**
-   ```bash
-   cp env.example .env.local
-   ```
-   
-   Update `.env.local` with your Contentful credentials:
-   ```env
-   CONTENTFUL_SPACE_ID=your_space_id_here
-   CONTENTFUL_ACCESS_TOKEN=your_access_token_here
-   NEXT_PUBLIC_SITE_URL=http://localhost:3000
-   ```
+### 2. Environment Setup
 
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+Create a `.env.local` file with your Contentful credentials:
+
+```env
+# Contentful Configuration
+CONTENTFUL_SPACE_ID=your_space_id_here
+CONTENTFUL_ACCESS_TOKEN=your_access_token_here
+
+# Contentful App Configuration (for app functionality)
+CONTENTFUL_APP_ID=your_app_id_here
+CONTENTFUL_APP_SECRET=your_app_secret_here
+
+# Site Configuration
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# API Configuration (optional)
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+```
+
+
+### 3. Contentful Setup
+
+**Follow the detailed setup guide**: [CONTENTFUL_SETUP.md](./CONTENTFUL_SETUP.md)
+
+Quick steps:
+1. Create a "Page" content type in Contentful
+2. Add fields: slug, title, description, keywords, layoutConfig
+3. Create sample pages with layout configurations
+4. Test GraphQL queries in Contentful Playground
+
+### 4. Run Development Server
+
+```bash
+npm run dev
+```
 
 ## Project Structure
 
@@ -75,7 +92,11 @@ src/
 │       ├── LandingPageRenderer.tsx
 │       └── Navigation.tsx
 ├── lib/
-│   └── contentful.ts             # Contentful integration
+│   └── api/                      # API integration
+│       ├── axios.ts              # HTTP client setup
+│       ├── contentful.ts         # Contentful service
+│       ├── queries.ts            # GraphQL queries
+│       └── utils.ts              # API utilities
 ├── store/                        # Redux store
 │   ├── index.ts                  # Store configuration
 │   └── layoutSlice.ts            # Layout state management
@@ -156,11 +177,6 @@ Create a new content type in Contentful with the following fields:
 3. Install the Page Builder app
 4. Configure the app with your preview URL
 
-### 3. Create Sample Pages
-
-Create two pages in Contentful:
-- **Page 1**: Slug `page-1`
-- **Page 2**: Slug `page-2`
 
 ## Usage
 
@@ -179,61 +195,92 @@ Create two pages in Contentful:
 - **Page 1**: `/landing/page-1` - First landing page
 - **Page 2**: `/landing/page-2` - Second landing page
 
-## Features in Detail
+## Performance Testing
 
-### Redux State Management
-- **Undo/Redo**: Full history management with keyboard shortcuts
-- **Autosave**: Automatic saving after 2 seconds of inactivity
-- **Persistence**: State restored after page refresh
+### Run Performance Tests
 
-### Performance Optimizations
-- **Next.js Image**: Optimized image loading and display
-- **Static Generation**: Pages pre-rendered at build time
+```bash
+# Test Lighthouse scores
+npm run test-performance
+
+# Analyze bundle size
+npm run analyze
+```
+
+### Performance Requirements
+
+### Optimization Features
+
+- **Image Optimization**: Next.js Image with WebP/AVIF formats
 - **Code Splitting**: Automatic code splitting for optimal loading
-
-### SEO & Accessibility
-- **Dynamic Metadata**: Page-specific meta tags
-- **JSON-LD**: Structured data for search engines
-- **Semantic HTML**: Proper heading hierarchy and landmarks
-- **Alt Text**: Descriptive alt text for all images
+- **Static Generation**: Pages pre-rendered at build time
+- **Bundle Optimization**: Tree shaking and minification
+- **Caching**: Optimized cache headers for static assets
 
 ## Testing
 
-Run the test suite:
+### Environment Validation
+
 ```bash
-npm test
+# Validate environment variables
+npm run validate-env
+```
+
+### Performance Testing
+
+```bash
+# Run Lighthouse tests
+npm run test-performance
 ```
 
 ## Build & Deploy
 
 ### Build for Production
+
 ```bash
 npm run build
 ```
 
-### Deployed to Vercel
-1. Set environment variables in Vercel dashboard
-2. Deploying automatically on push to main branch
+### Deploy to Vercel
+
+1. **Set up environment variables in Vercel dashboard:**
+   - Go to Project settings → Environment variables
+   - Add all variables from your `.env.local` file
+
+2. **Deploy automatically on push to main branch**
+
+### Deploy to Netlify
+
+1. **Build settings:**
+   - Build command: `npm run build`
+   - Publish directory: `.next`
+
+2. **Deploy automatically on push to main branch**
 
 ## Development
 
 ### Available Scripts
+
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
+- `npm run validate-env` - Validate environment variables
+- `npm run test-performance` - Run Lighthouse tests
+- `npm run analyze` - Analyze bundle size
 
 ### Code Style
+
 - TypeScript strict mode enabled
 - ESLint configuration for Next.js
 - Prettier formatting (recommended)
-
-
 
 
 ## Support
 
 For support and questions:
 Email - gsaurav641@gmail.com
+
+
 
 
