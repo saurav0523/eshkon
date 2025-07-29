@@ -1,0 +1,18 @@
+{
+  "name": "Page Builder",
+  "id": "page-builder",
+  "fieldTypes": ["Object"],
+  "src": "http://localhost:3000",
+  "parameters": {
+    "installation": [],
+    "instance": [
+      {
+        "id": "previewUrl",
+        "name": "Preview URL",
+        "description": "URL for the preview button",
+        "type": "Symbol",
+        "required": false
+      }
+    ]
+  }
+} 
