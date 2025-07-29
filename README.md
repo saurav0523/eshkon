@@ -2,7 +2,7 @@
 
 A powerful fullstack Contentful App that enables editors to visually arrange components (via drag-and-drop) for landing pages. The component order is saved as JSON config into Contentful, and the frontend is built using Next.js (App Router, SSG) to render pages using this layout config.
 
-## 🚀 Features
+## Features
 
 - **Visual Page Builder**: Drag-and-drop interface within Contentful
 - **Three Component Types**: Hero Block, Two Column Row, 2x2 Image Grid
@@ -12,7 +12,7 @@ A powerful fullstack Contentful App that enables editors to visually arrange com
 - **SEO Ready**: Dynamic metadata and JSON-LD structured data
 - **TypeScript**: Full type safety throughout the application
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: Next.js 15.4+ (App Router, SSG)
 - **Language**: TypeScript
@@ -23,7 +23,7 @@ A powerful fullstack Contentful App that enables editors to visually arrange com
 - **Deployment**: Vercel
 - **Version Control**: GitHub
 
-## 📦 Installation
+## Installation
 
 1. **Clone the repository**
    ```bash
@@ -53,7 +53,7 @@ A powerful fullstack Contentful App that enables editors to visually arrange com
    npm run dev
    ```
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -83,7 +83,7 @@ src/
     └── index.ts                  # TypeScript definitions
 ```
 
-## 🎨 Component Types
+## Component Types
 
 ### 1. Hero Block
 - **Fields**: Heading, subtitle, CTA button, background image
@@ -97,7 +97,7 @@ src/
 - **Fields**: Four images with titles
 - **Features**: Responsive grid with hover animations
 
-## 🔧 Contentful Setup
+## Contentful Setup
 
 ### 1. Create Content Model
 
@@ -162,7 +162,7 @@ Create two pages in Contentful:
 - **Page 1**: Slug `page-1`
 - **Page 2**: Slug `page-2`
 
-## 🚀 Usage
+## Usage
 
 ### Contentful App (Page Builder)
 
@@ -179,7 +179,7 @@ Create two pages in Contentful:
 - **Page 1**: `/landing/page-1` - First landing page
 - **Page 2**: `/landing/page-2` - Second landing page
 
-## 🎯 Features in Detail
+## Features in Detail
 
 ### Redux State Management
 - **Undo/Redo**: Full history management with keyboard shortcuts
@@ -197,26 +197,25 @@ Create two pages in Contentful:
 - **Semantic HTML**: Proper heading hierarchy and landmarks
 - **Alt Text**: Descriptive alt text for all images
 
-## 🧪 Testing
+## Testing
 
 Run the test suite:
 ```bash
 npm test
 ```
 
-## 📦 Build & Deploy
+## Build & Deploy
 
 ### Build for Production
 ```bash
 npm run build
 ```
 
-### Deploy to Vercel
-1. Connect your GitHub repository to Vercel
-2. Set environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+### Deployed to Vercel
+1. Set environment variables in Vercel dashboard
+2. Deploying automatically on push to main branch
 
-## 🔧 Development
+## Development
 
 ### Available Scripts
 - `npm run dev` - Start development server
@@ -229,25 +228,12 @@ npm run build
 - ESLint configuration for Next.js
 - Prettier formatting (recommended)
 
-## 📝 License
 
-This project is licensed under the MIT License.
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📞 Support
+## Support
 
 For support and questions:
-- Create an issue in the GitHub repository
-- Check the documentation in the `/docs` folder
-- Review the Contentful App documentation
+Email - gsaurav641@gmail.com
 
----
 
-**Built with ❤️ using Next.js, TypeScript, and Contentful**
