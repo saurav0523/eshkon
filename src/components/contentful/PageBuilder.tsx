@@ -84,8 +84,10 @@ const PageBuilder: React.FC<PageBuilderProps> = ({ sdk }) => {
   };
 
   const handlePreview = () => {
-    // Preview functionality is now handled directly in the Toolbar component
-    // with specific buttons for each page
+    const previewUrl = sdk.parameters.instance?.previewUrl;
+    if (previewUrl) {
+      window.open(previewUrl, '_blank');
+    }
   };
 
   if (isLoading) {
