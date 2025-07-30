@@ -21,8 +21,8 @@ const ComponentList: React.FC = () => {
         ctaText: 'Get Started',
         ctaUrl: '#',
         backgroundImage: {
-          url: 'https://via.placeholder.com/1200x600/4A90E2/FFFFFF?text=Hero+Background',
-          alt: 'Hero background'
+          url: 'https://picsum.photos/1200/600?random=1',
+          alt: 'Modern office workspace'
         }
       } as HeroData
     },
@@ -40,8 +40,8 @@ const ComponentList: React.FC = () => {
         },
         right: {
           image: {
-            url: 'https://via.placeholder.com/600x400/50C878/FFFFFF?text=Feature+Image',
-            alt: 'Feature image'
+            url: 'https://picsum.photos/600/400?random=2',
+            alt: 'Business analytics dashboard'
           }
         }
       } as TwoColumnData
@@ -54,24 +54,24 @@ const ComponentList: React.FC = () => {
       defaultData: {
         images: [
           {
-            url: 'https://via.placeholder.com/300x300/FF6B6B/FFFFFF?text=Image+1',
-            alt: 'Grid image 1',
-            title: 'Image 1'
+            url: 'https://picsum.photos/300/300?random=3',
+            alt: 'Team collaboration meeting',
+            title: 'Team Meeting'
           },
           {
-            url: 'https://via.placeholder.com/300x300/4ECDC4/FFFFFF?text=Image+2',
-            alt: 'Grid image 2',
-            title: 'Image 2'
+            url: 'https://picsum.photos/300/300?random=4',
+            alt: 'Creative brainstorming session',
+            title: 'Brainstorming'
           },
           {
-            url: 'https://via.placeholder.com/300x300/45B7D1/FFFFFF?text=Image+3',
-            alt: 'Grid image 3',
-            title: 'Image 3'
+            url: 'https://picsum.photos/300/300?random=5',
+            alt: 'Professional presentation',
+            title: 'Presentation'
           },
           {
-            url: 'https://via.placeholder.com/300x300/96CEB4/FFFFFF?text=Image+4',
-            alt: 'Grid image 4',
-            title: 'Image 4'
+            url: 'https://picsum.photos/300/300?random=6',
+            alt: 'Product development workspace',
+            title: 'Development'
           }
         ]
       } as ImageGridData

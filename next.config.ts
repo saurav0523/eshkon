@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   
   // Image optimization
   images: {
-    // Allow external images from Contentful and Unsplash
+        // Allow external images from Contentful, Unsplash, and Picsum
     remotePatterns: [
       {
         protocol: 'https',
@@ -31,7 +31,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'via.placeholder.com',
+        hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
       },

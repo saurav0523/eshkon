@@ -231,7 +231,7 @@ export class ContentfulService {
             ctaText: 'Get Started',
             ctaUrl: '#',
             backgroundImage: {
-              url: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=600&fit=crop',
+              url: 'https://picsum.photos/1200/600?random=1',
               alt: 'Hero background'
             }
           }
@@ -249,7 +249,7 @@ export class ContentfulService {
             },
             right: {
               image: {
-                url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+                url: 'https://picsum.photos/600/400?random=2',
                 alt: 'Feature image'
               }
             }
@@ -262,22 +262,22 @@ export class ContentfulService {
           data: {
             images: [
               {
-                url: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=300&fit=crop',
+                url: 'https://picsum.photos/300/300?random=3',
                 alt: 'Grid image 1',
                 title: 'Image 1'
               },
               {
-                url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop',
+                url: 'https://picsum.photos/300/300?random=4',
                 alt: 'Grid image 2',
                 title: 'Image 2'
               },
               {
-                url: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=300&fit=crop',
+                url: 'https://picsum.photos/300/300?random=5',
                 alt: 'Grid image 3',
                 title: 'Image 3'
               },
               {
-                url: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=300&fit=crop',
+                url: 'https://picsum.photos/300/300?random=6',
                 alt: 'Grid image 4',
                 title: 'Image 4'
               }

@@ -73,10 +73,17 @@ const Toolbar: React.FC<ToolbarProps> = ({ onSave, onPreview, isDirty, lastSaved
         
         <button
           className={`${styles.button} ${styles.previewButton}`}
-          onClick={onPreview}
-          title="Preview Page"
+          onClick={() => window.open('https://eshkon-sable.vercel.app/landing/page-1', '_blank')}
+          title="Preview Page 1"
         >
-          👁 Preview
+          👁 Page 1
+        </button>
+        <button
+          className={`${styles.button} ${styles.previewButton}`}
+          onClick={() => window.open('https://eshkon-sable.vercel.app/landing/page-2', '_blank')}
+          title="Preview Page 2"
+        >
+          👁 Page 2
         </button>
         
         <button
