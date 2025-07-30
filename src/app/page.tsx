@@ -16,15 +16,15 @@ export default function Home() {
         
         <div className={styles.features}>
           <div className={styles.feature}>
-            <h3>🎨 Visual Page Builder</h3>
+            <h3> Visual Page Builder</h3>
             <p>Drag and drop components to create stunning landing pages</p>
           </div>
           <div className={styles.feature}>
-            <h3>📱 Responsive Design</h3>
+            <h3> Responsive Design</h3>
             <p>All components are fully responsive and mobile-friendly</p>
           </div>
           <div className={styles.feature}>
-            <h3>⚡ Performance Optimized</h3>
+            <h3> Performance Optimized</h3>
             <p>Built with Next.js for optimal performance and SEO</p>
           </div>
         </div>

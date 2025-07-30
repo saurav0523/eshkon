@@ -85,7 +85,7 @@ export async function getPageData(slug: string): Promise<PageData> {
   } catch (error) {
     console.error('Error fetching page data:', error);
     
-    // Return default data for development
+
     return {
       layoutConfig: [
         {

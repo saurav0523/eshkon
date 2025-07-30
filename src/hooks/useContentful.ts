@@ -13,9 +13,7 @@ interface UseContentfulReturn extends UseContentfulState {
   clearError: () => void;
 }
 
-/**
- * Custom hook for fetching page data from Contentful
- */
+
 export const useContentful = (slug: string): UseContentfulReturn => {
   const [state, setState] = useState<UseContentfulState>({
     data: null,
@@ -32,7 +30,7 @@ export const useContentful = (slug: string): UseContentfulReturn => {
     } catch (error) {
       console.error('Error in useContentful:', error);
       
-      // Fallback to default data if API fails
+  
       const defaultData = ContentfulService.getDefaultPageData(slug);
       setState({ 
         data: defaultData, 
@@ -61,9 +59,7 @@ export const useContentful = (slug: string): UseContentfulReturn => {
   };
 };
 
-/**
- * Custom hook for fetching all pages
- */
+
 export const useAllPages = () => {
   const [state, setState] = useState<{
     data: Array<{
@@ -106,9 +102,7 @@ export const useAllPages = () => {
   };
 };
 
-/**
- * Custom hook for fetching assets
- */
+
 export const useAssets = (limit: number = 10) => {
   const [state, setState] = useState<{
     data: Array<{

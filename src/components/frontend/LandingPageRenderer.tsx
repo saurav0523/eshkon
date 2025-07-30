@@ -11,7 +11,6 @@ interface LandingPageRendererProps {
   components: ComponentConfig[];
 }
 
-// Type guards
 const isHeroData = (data: HeroData | TwoColumnData | ImageGridData): data is HeroData => {
   return 'heading' in data && 'subtitle' in data && 'ctaText' in data && 'ctaUrl' in data;
 };

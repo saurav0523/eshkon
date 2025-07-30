@@ -6,9 +6,7 @@ export interface ApiError {
   code?: string;
 }
 
-/**
- * Extract error message from axios error
- */
+
 export const extractErrorMessage = (error: unknown): string => {
   if (error instanceof AxiosError) {
     return error.response?.data?.message || error.message || 'An error occurred';
@@ -21,9 +19,6 @@ export const extractErrorMessage = (error: unknown): string => {
   return 'An unknown error occurred';
 };
 
-/**
- * Create standardized API error object
- */
 export const createApiError = (error: unknown): ApiError => {
   if (error instanceof AxiosError) {
     return {
@@ -44,9 +39,7 @@ export const createApiError = (error: unknown): ApiError => {
   };
 };
 
-/**
- * Check if environment variables are properly configured
- */
+
 export const validateEnvironment = (): { isValid: boolean; missing: string[] } => {
   const required = [
     'CONTENTFUL_SPACE_ID',
@@ -61,9 +54,7 @@ export const validateEnvironment = (): { isValid: boolean; missing: string[] } =
   };
 };
 
-/**
- * Format API response with consistent structure
- */
+
 export const formatApiResponse = <T>(data: T, success: boolean = true) => {
   return {
     success,
@@ -72,9 +63,6 @@ export const formatApiResponse = <T>(data: T, success: boolean = true) => {
   };
 };
 
-/**
- * Retry function with exponential backoff
- */
 export const retryWithBackoff = async <T>(
   fn: () => Promise<T>,
   maxRetries: number = 3,

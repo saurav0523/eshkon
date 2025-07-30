@@ -3,7 +3,6 @@ import { PAGE_QUERY, ALL_PAGES_QUERY, COMPONENT_QUERY, ASSETS_QUERY } from './qu
 import { PageData, ComponentConfig } from '../../types';
 import { validateEnvironment, retryWithBackoff } from './utils';
 
-// Type definitions for API responses
 interface PageResponse {
   data: {
     pageCollection: {
@@ -69,14 +68,10 @@ interface AssetsResponse {
   };
 }
 
-// API Service Class
 export class ContentfulService {
-  /**
-   * Fetch a single page by slug
-   */
+
   static async getPage(slug: string): Promise<PageData> {
     try {
-      // Check if API is available and environment is valid
       if (!contentfulApi) {
         console.log('Contentful API not available, using default data');
         return this.getDefaultPageData(slug);
@@ -89,7 +84,6 @@ export class ContentfulService {
         return this.getDefaultPageData(slug);
       }
 
-      // Make API call only if we have valid credentials and API instance
       if (!contentfulApi) {
         throw new Error('Contentful API not available');
       }
@@ -118,18 +112,14 @@ export class ContentfulService {
     } catch (error) {
       console.error('Error fetching page data:', error);
       
-      // Always fall back to default data on any error
       console.log('Falling back to default data');
       return this.getDefaultPageData(slug);
     }
   }
 
-  /**
-   * Fetch all pages
-   */
+
   static async getAllPages() {
     try {
-      // Check if API is available
       if (!contentfulApi) {
         console.log('Contentful API not available, returning empty array');
         return [];
@@ -160,12 +150,8 @@ export class ContentfulService {
     }
   }
 
-  /**
-   * Fetch a specific component by ID
-   */
   static async getComponent(id: string) {
     try {
-      // Check if API is available
       if (!contentfulApi) {
         console.log('Contentful API not available, component not available');
         return null;
@@ -203,12 +189,8 @@ export class ContentfulService {
     }
   }
 
-  /**
-   * Fetch assets (images, etc.)
-   */
   static async getAssets(limit: number = 10) {
     try {
-      // Check if API is available
       if (!contentfulApi) {
         console.log('Contentful API not available, returning empty assets array');
         return [];
@@ -236,9 +218,6 @@ export class ContentfulService {
     }
   }
 
-  /**
-   * Get default/mock data for development
-   */
   static getDefaultPageData(slug: string): PageData {
     return {
       layoutConfig: [

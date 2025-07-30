@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
@@ -8,7 +9,6 @@ import { store, persistor } from '../../store';
 import PageBuilder from '../../components/contentful/PageBuilder';
 import styles from './contentful-app.module.css';
 
-// Mock SDK for development
 const mockSDK = {
   field: {
     getValue: () => null,
@@ -17,7 +17,6 @@ const mockSDK = {
       return Promise.resolve();
     },
     onValueChanged: (_callback: (value: any) => void) => {
-      // Mock implementation
     }
   },
   parameters: {

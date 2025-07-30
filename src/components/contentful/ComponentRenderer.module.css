@@ -94,7 +94,7 @@
   opacity: 0.5;
 }
 
-/* Component preview styles */
+
 .componentPreview {
   pointer-events: none;
   user-select: none;
@@ -119,7 +119,7 @@
   color: #666;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
   .canvasContent {
     gap: 16px;

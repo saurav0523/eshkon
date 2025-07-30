@@ -82,7 +82,7 @@ const ComponentList: React.FC = () => {
     const newComponent: ComponentConfig = {
       id: `component-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       type: componentType as 'hero' | 'twoColumn' | 'imageGrid',
-      order: 0, // Will be set by the reducer
+      order: 0, 
       data: defaultData
     };
     

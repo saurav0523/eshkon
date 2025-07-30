@@ -36,14 +36,12 @@ const PageBuilder: React.FC<PageBuilderProps> = ({ sdk }) => {
   useEffect(() => {
     const initializeApp = async () => {
       try {
-        // Get the current field value
         const currentValue = sdk.field.getValue();
 
         if (currentValue && currentValue.components) {
           dispatch(setComponents(currentValue.components));
         }
 
-        // Listen for field changes
         sdk.field.onValueChanged((value: { components?: ComponentConfig[] } | undefined) => {
           if (value && value.components) {
             dispatch(setComponents(value.components));

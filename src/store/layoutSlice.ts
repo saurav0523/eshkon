@@ -16,7 +16,6 @@ const layoutSlice = createSlice({
     addComponent: (state, action: PayloadAction<ComponentConfig>) => {
       state.components.push(action.payload);
       state.isDirty = true;
-      // Add to history
       state.history = state.history.slice(0, state.historyIndex + 1);
       state.history.push([...state.components]);
       state.historyIndex = state.history.length - 1;
@@ -24,7 +23,6 @@ const layoutSlice = createSlice({
     removeComponent: (state, action: PayloadAction<string>) => {
       state.components = state.components.filter(comp => comp.id !== action.payload);
       state.isDirty = true;
-      // Add to history
       state.history = state.history.slice(0, state.historyIndex + 1);
       state.history.push([...state.components]);
       state.historyIndex = state.history.length - 1;
@@ -33,12 +31,11 @@ const layoutSlice = createSlice({
       const { sourceIndex, destinationIndex } = action.payload;
       const [removed] = state.components.splice(sourceIndex, 1);
       state.components.splice(destinationIndex, 0, removed);
-      // Update order numbers
+
       state.components.forEach((comp, index) => {
         comp.order = index;
       });
       state.isDirty = true;
-      // Add to history
       state.history = state.history.slice(0, state.historyIndex + 1);
       state.history.push([...state.components]);
       state.historyIndex = state.history.length - 1;
@@ -49,7 +46,6 @@ const layoutSlice = createSlice({
       if (component) {
         component.data = { ...component.data, ...data };
         state.isDirty = true;
-        // Add to history
         state.history = state.history.slice(0, state.historyIndex + 1);
         state.history.push([...state.components]);
         state.historyIndex = state.history.length - 1;
