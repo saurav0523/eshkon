@@ -186,17 +186,6 @@ Create a new content type in Contentful with the following fields:
 - **Page 1**: `/landing/page-1` - First landing page
 - **Page 2**: `/landing/page-2` - Second landing page
 
-## Performance Testing
-
-### Run Performance Tests
-
-```bash
-# Test Lighthouse scores
-npm run test-performance
-
-# Analyze bundle size
-npm run analyze
-```
 
 ### Performance Requirements
 
