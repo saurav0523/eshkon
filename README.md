@@ -54,16 +54,8 @@ NEXT_PUBLIC_API_URL=http://localhost:3000/api
 ```
 
 
-### 3. Contentful Setup
 
-
-Quick steps:
-1. Create a "Page" content type in Contentful
-2. Add fields: slug, title, description, keywords, layoutConfig
-3. Create sample pages with layout configurations
-4. Test GraphQL queries in Contentful Playground
-
-### 4. Run Development Server
+### 3. Run Development Server
 
 ```bash
 npm run dev
