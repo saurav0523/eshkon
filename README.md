@@ -208,21 +208,7 @@ npm run analyze
 - **Bundle Optimization**: Tree shaking and minification
 - **Caching**: Optimized cache headers for static assets
 
-## Testing
 
-### Environment Validation
-
-```bash
-# Validate environment variables
-npm run validate-env
-```
-
-### Performance Testing
-
-```bash
-# Run Lighthouse tests
-npm run test-performance
-```
 
 ## Build & Deploy
 
