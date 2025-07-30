@@ -252,7 +252,7 @@ export class ContentfulService {
             ctaText: 'Get Started',
             ctaUrl: '#',
             backgroundImage: {
-              url: 'https://via.placeholder.com/1200x600/4A90E2/FFFFFF?text=Hero+Background',
+              url: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=600&fit=crop',
               alt: 'Hero background'
             }
           }
@@ -270,7 +270,7 @@ export class ContentfulService {
             },
             right: {
               image: {
-                url: 'https://via.placeholder.com/600x400/50C878/FFFFFF?text=Feature+Image',
+                url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
                 alt: 'Feature image'
               }
             }
@@ -283,22 +283,22 @@ export class ContentfulService {
           data: {
             images: [
               {
-                url: 'https://via.placeholder.com/300x300/FF6B6B/FFFFFF?text=Image+1',
+                url: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=300&fit=crop',
                 alt: 'Grid image 1',
                 title: 'Image 1'
               },
               {
-                url: 'https://via.placeholder.com/300x300/4ECDC4/FFFFFF?text=Image+2',
+                url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop',
                 alt: 'Grid image 2',
                 title: 'Image 2'
               },
               {
-                url: 'https://via.placeholder.com/300x300/45B7D1/FFFFFF?text=Image+3',
+                url: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=300&fit=crop',
                 alt: 'Grid image 3',
                 title: 'Image 3'
               },
               {
-                url: 'https://via.placeholder.com/300x300/96CEB4/FFFFFF?text=Image+4',
+                url: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=300&fit=crop',
                 alt: 'Grid image 4',
                 title: 'Image 4'
               }
