@@ -56,7 +56,6 @@ NEXT_PUBLIC_API_URL=http://localhost:3000/api
 
 ### 3. Contentful Setup
 
-**Follow the detailed setup guide**: [CONTENTFUL_SETUP.md](./CONTENTFUL_SETUP.md)
 
 Quick steps:
 1. Create a "Page" content type in Contentful
