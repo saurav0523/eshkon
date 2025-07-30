@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "validate-env": "node scripts/validate-env.js",
     "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
